@@ -72,6 +72,14 @@ class Cadastro {
         return bcrypt.compare(senha, results[0].senha)
     }
 
+    async informarId(email) {
+        const sql = 'SELECT id_usuario FROM usuarios WHERE email = ?'
+
+        const id = await query(sql, email)
+        //console.log(id)
+        return id
+    }
+
 }
 
 module.exports = new Cadastro
