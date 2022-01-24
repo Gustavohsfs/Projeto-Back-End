@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "38c22a9e-ee96-408c-b58f-2f310a8d2adc",
+		"name": "Projeto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Cadastrar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Sandro\",\r\n    \"email\": \"sandro@email.com\",\r\n    \"id_cidade\": 11,\r\n    \"rua\": \"Avenida Brasil\",\r\n    \"numero\": 511,\r\n    \"telefone\": \"06222222220\",\r\n    \"cpf\": \"91672443789\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/usuario/cadastro",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuários",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDMwMjc1NjcsImV4cCI6MTY0MzAyNzg2N30.ghRKJIgIjIwCApuqnxECCijyGOhgqKTUn2qayJrXfa4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/usuario/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Dados do Usuário",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDMwMjc4OTMsImV4cCI6MTY0MzAyODE5M30.lu3RKCTJhxFk_6wGzGu1kMZwqoFEFC97nJheDi1XVc4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rua\": \"rua Toper\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/usuario/cadastro/73",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								"cadastro",
+								"73"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDMwMjc1NjcsImV4cCI6MTY0MzAyNzg2N30.ghRKJIgIjIwCApuqnxECCijyGOhgqKTUn2qayJrXfa4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/usuario/cadastro/80",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								"cadastro",
+								"80"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cidade",
+			"item": [
+				{
+					"name": "Cadastrar Cidade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_estado\": 5,\r\n    \"nome_cidade\": \"Porto Velho\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/cidade/cadastro",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cidade",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estado",
+			"item": [
+				{
+					"name": "Cadastrar Estado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prefixo_estado\": \"RO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/estado/cadastro",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"estado",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuários por Estado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/usuario/estado/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								"estado",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Efetuar Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"osmar@email.com\",\r\n    \"senha\": \"489\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/usuario/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Efetuar Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDMwMjUwNDQsImV4cCI6MTY0MzAyNTM0NH0.Uyu62JalRTZJ_ygjTaJnr1VXTzddcIGmETbtOPfT3NI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"osmar@email.com\",\r\n    \"senha\": \"489\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/usuario/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"usuario",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
