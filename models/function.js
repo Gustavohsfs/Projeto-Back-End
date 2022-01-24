@@ -1,4 +1,3 @@
-const conexao = require('../infraestrutura/conexao')
 const repositorio = require('../repositorio/repositorio')
 
 class Cadastrar {
