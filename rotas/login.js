@@ -1,4 +1,4 @@
-const logar = require('../repositorio/loginFunction')
+const Logar = require('../repositorio/loginFunction')
 const jwt = require('jsonwebtoken')
 const SECRET = 'testetoken'
  
@@ -8,8 +8,8 @@ module.exports = app => {
         const email = req.body.email
         const senha = req.body.senha
 
-        const id = await logar.getId(email)
-        const resultado = await logar.loginRep(email, senha)
+        const id = await Logar.getId(email)
+        const resultado = await Logar.loginRep(email, senha)
 
         if (resultado) {
             const token =  jwt.sign({id_usuario: id}, SECRET, {expiresIn: 300})
