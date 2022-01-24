@@ -15,6 +15,6 @@ module.exports = app => {
             const token =  jwt.sign({id_usuario: id}, SECRET, {expiresIn: 300})
             res.status(200).json({ message: 'usuario autenticado', token })
         }
-            res.status(200).json({ message: 'usuario ou senha incorreto' })
+        else res.status(200).json({ message: 'usuario ou senha incorreto' })
     })
 }
