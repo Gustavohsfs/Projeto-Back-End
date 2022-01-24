@@ -9,7 +9,6 @@ module.exports = app => {
         const senha = req.body.senha
 
         const id = await repositorio.getId(email)
-        console.log(id)
         const resultado = await repositorio.loginRep(email, senha)
 
         if (resultado) {
