@@ -1,6 +1,7 @@
 const repositorio = require('../repositorio/repositorio')
+const exibir = require('../repositorio/exibirResultados')
 
-class Cadastrar {
+class Model {
     adicionarUsuario(cadastro) {
 
         return repositorio.adicionarUsuarioRep(cadastro)
@@ -33,12 +34,12 @@ class Cadastrar {
 
     listarUsuarios() {
 
-        return repositorio.listarUsuariosRep()
+        return exibir.listarUsuariosRep()
     }
 
     listarUsuariosID(id) {
 
-        return repositorio.listarUsuariosIDRep(id)
+        return exibir.listarUsuariosIDRep(id)
     }
 
     atualizarCadastro(id, valores) {
@@ -53,14 +54,14 @@ class Cadastrar {
 
     listarUsuariosPorEstado(id) {
 
-        return repositorio.listarUsuariosPorEstadoRep(id)
+        return exibir.listarUsuariosPorEstadoRep(id)
     }
 
     buscarPorEmail(email) {
 
-        return repositorio.buscarPorEmailRep(email)
+        return exibir.buscarPorEmailRep(email)
     }
 
 }
 
-module.exports = new Cadastrar
+module.exports = new Model
