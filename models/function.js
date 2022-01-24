@@ -1,10 +1,10 @@
-const cadastro = require('../repositorio/cadastros')
-const exibir = require('../repositorio/exibirResultados')
+const Cadastro = require('../repositorio/cadastros')
+const Exibir = require('../repositorio/exibirResultados')
 
 class Model {
     adicionarUsuario(cadastro) {
 
-        return cadastro.adicionarUsuarioRep(cadastro)
+        return Cadastro.adicionarUsuarioRep(cadastro)
         .then(resultados => {
             const id = resultados.insertId
 
@@ -14,7 +14,7 @@ class Model {
 
     adicionarCidade(cadastro) {
         
-        return cadastro.adicionarCidadeRep(cadastro)
+        return Cadastro.adicionarCidadeRep(cadastro)
         .then(resultados => {
             const id = resultados.insertId
 
@@ -24,7 +24,7 @@ class Model {
 
     adicionarEstado(cadastro) {
 
-            return cadastro.adicionarEstadoRep(cadastro)
+            return Cadastro.adicionarEstadoRep(cadastro)
             .then(resultados => {
                 const id = resultados.insertId
 
@@ -34,32 +34,32 @@ class Model {
 
     listarUsuarios() {
 
-        return exibir.listarUsuariosRep()
+        return Exibir.listarUsuariosRep()
     }
 
     listarUsuariosID(id) {
 
-        return exibir.listarUsuariosIDRep(id)
+        return Exibir.listarUsuariosIDRep(id)
     }
 
     atualizarCadastro(id, valores) {
 
-        return cadastro.atualizarCadastroRep(id, valores)
+        return Cadastro.atualizarCadastroRep(id, valores)
     }
 
     deletarCadastro(id) {
 
-        return cadastro.deletarCadastroRep(id)
+        return Cadastro.deletarCadastroRep(id)
     }
 
     listarUsuariosPorEstado(id) {
 
-        return exibir.listarUsuariosPorEstadoRep(id)
+        return Exibir.listarUsuariosPorEstadoRep(id)
     }
 
     buscarPorEmail(email) {
 
-        return exibir.buscarPorEmailRep(email)
+        return Exibir.buscarPorEmailRep(email)
     }
 
 }
