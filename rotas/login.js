@@ -8,7 +8,7 @@ module.exports = app => {
         const email = req.body.email
         const senha = req.body.senha
 
-        const id = await repositorio.informarId(email)
+        const id = await repositorio.getId(email)
         console.log(id)
         const resultado = await repositorio.loginRep(email, senha)
 
@@ -16,6 +16,6 @@ module.exports = app => {
             const token =  jwt.sign({id_usuario: id}, SECRET, {expiresIn: 300})
             res.status(200).json({ message: 'usuario autenticado', token })
         }
-        else res.status(200).json({ message: 'usuario ou senha incorreto' })
+            res.status(200).json({ message: 'usuario ou senha incorreto' })
     })
 }
