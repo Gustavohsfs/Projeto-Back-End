@@ -1,10 +1,10 @@
-const repositorio = require('../repositorio/repositorio')
+const cadastro = require('../repositorio/cadastros')
 const exibir = require('../repositorio/exibirResultados')
 
 class Model {
     adicionarUsuario(cadastro) {
 
-        return repositorio.adicionarUsuarioRep(cadastro)
+        return cadastro.adicionarUsuarioRep(cadastro)
         .then(resultados => {
             const id = resultados.insertId
 
@@ -14,7 +14,7 @@ class Model {
 
     adicionarCidade(cadastro) {
         
-        return repositorio.adicionarCidadeRep(cadastro)
+        return cadastro.adicionarCidadeRep(cadastro)
         .then(resultados => {
             const id = resultados.insertId
 
@@ -24,7 +24,7 @@ class Model {
 
     adicionarEstado(cadastro) {
 
-            return repositorio.adicionarEstadoRep(cadastro)
+            return cadastro.adicionarEstadoRep(cadastro)
             .then(resultados => {
                 const id = resultados.insertId
 
@@ -44,12 +44,12 @@ class Model {
 
     atualizarCadastro(id, valores) {
 
-        return repositorio.atualizarCadastroRep(id, valores)
+        return cadastro.atualizarCadastroRep(id, valores)
     }
 
     deletarCadastro(id) {
 
-        return repositorio.deletarCadastroRep(id)
+        return cadastro.deletarCadastroRep(id)
     }
 
     listarUsuariosPorEstado(id) {
