@@ -12,7 +12,7 @@ module.exports = app => {
         const resultado = await Logar.loginRep(email, senha)
 
         if (resultado) {
-            const token =  jwt.sign({id_usuario: id}, SECRET, {expiresIn: 300})
+            const token =  jwt.sign({id_usuario: id}, SECRET, {expiresIn: 1800})
             res.status(200).json({ message: 'usuario autenticado', token })
         }
         else res.status(200).json({ message: 'usuario ou senha incorreto' })
